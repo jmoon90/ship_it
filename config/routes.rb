@@ -4,5 +4,6 @@ Shipit::Application.routes.draw do
 
   resources :posts, only: [:index, :show, :new, :create] do
     resources :feedbacks, only: [:create]
+    resources :votes, only: [:create, :destroy]
   end
 end

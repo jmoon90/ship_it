@@ -10,45 +10,46 @@
   </head>
 
   <body>
-      <nav class="top-bar" data-topbar>
-        <ul class="title-area">
-          <li class="name">
-            <h1><%= link_to 'Ship It', root_path %></h1>
+    <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+      <li class="name">
+      <h1><%= link_to 'Ship It', root_path %></h1>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <% if user_signed_in? %>
+        <li class="has-dropdown">
+        <%= link_to 'Profile', edit_user_registration_path %>
+        <ul class="dropdown">
+          <li>
+          <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
           </li>
         </ul>
-
-        <section class="top-bar-section">
-          <!-- Right Nav Section -->
-          <ul class="right">
-            <% if user_signed_in? %>
-              <li class="has-dropdown">
-                <%= link_to 'Profile', edit_user_registration_path %>
-                <ul class="dropdown">
-                  <li>
-                    <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
-                  </li>
-                </ul>
-              </li>
-            <% else %>
-              <li class="has-dropdown">
-                <%= link_to "Sign In", new_user_session_path %>
-                <ul class="dropdown">
-                  <li>
-                    <%= link_to "Sign Up", new_user_registration_path %>
-                  </li>
-                </ul>
-              </li>
-            <% end %>
-          </ul>
-        </section>
-      </nav>
-
-      <% flash.each do |name, msg| %>
-        <%= msg %>
+        </li>
+      <% else %>
+        <li class="has-dropdown">
+        <%= link_to "Sign In", new_user_session_path %>
+        <ul class="dropdown">
+          <li>
+          <%= link_to "Sign Up", new_user_registration_path %>
+          </li>
+        </ul>
+        </li>
       <% end %>
-<div class="row">
-  <div class="small-12 columns"><%= yield %></div>
+    </ul>
+    </section>
+    </nav>
+
+    <% flash.each do |name, msg| %>
+      <%= msg %>
+    <% end %>
+    <div class="row">
+      <div class="small-12 columns"><%= yield %></div>
+    </div>
   </div>
-</div>
-  </body>
+</body>
+    <%= javascript_include_tag "application" %>
 </html>

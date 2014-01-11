@@ -2,13 +2,28 @@
   <div class="small-12 small-offset-1 columns">
 <h1>Ship It</h1>
   <%= link_to 'Submit Project', new_post_path %>
+  </div>
+</div>
     <% @posts.each do |post| %>
       <div class='row'>
         <div class="small-10 columns">
+
           <ul>
-            <div class='row'>
-              <div class="small-8 small-offset-2 columns">
-                <h3><li><%= link_to post.name, post_path(post) %></li></h3>
+            <div class='row' style="margin-top: 30px;">
+              <div class='side-nav small-2 columns'>
+                <p><%= pluralize post.votes.count, "High Five" %></p>
+                  <% if user_signed_in? %>
+                    <% if post.has_vote_from?(current_user) %>
+                      <%= button_to "Remove High FIve", post_vote_path(post, post.vote_from(current_user)),
+                        method: :delete%>
+                    <% else %>
+                      <%= button_to "High Five", post_votes_path(post), method: :post %>
+                    <% end %>
+                  <% end %>
+              </div>
+              <div class="small-10 columns">
+              <h3><li><%= link_to post.name, post_path(post) %></li></h3>
+                
               </div>
             </div>
           </ul>

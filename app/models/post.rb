@@ -8,4 +8,18 @@ class Post < ActiveRecord::Base
   has_many :votes,
     dependent: :destroy,
     inverse_of: :post
+
+  def vote_from(user)
+    votes.find_by(user_id: user.id)
+  end
+
+  def has_vote_from?(user)
+    votes.find_by(user_id: user.id).present?
+  end
+
+  class << self
+    def by_recency
+      order(created_at: :desc)
+    end
+  end
 end
