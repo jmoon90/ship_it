@@ -10,7 +10,6 @@ feature 'guest visits post index page' do
     post
     visit posts_path
     expect(page).to have_content(post.name)
-    expect(page).to have_content(post.url)
   end
 
   context 'user is signed in' do

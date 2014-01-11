@@ -9,7 +9,6 @@ feature 'user posts app' do
     click_on "Ship it"
 
     expect(page).to have_content("Successfully Shipped")
-    expect(page).to have_content("www.shipit.com")
   end
 
   scenario 'with invalid input' do

@@ -1,8 +1,7 @@
 <h1>Ship It</h1>
-
-<ul>
+<%= link_to 'Submit Project', new_post_path %>
 <% @posts.each do |post| %>
-  <li><%= post.name %></li>
-  <li><%= post.url %></li>
-<% end %>
+<ul>
+  <h3><li><a href=<%= post.url %>><%= post.name %></a></li></h3>
 </ul>
+<% end %>
