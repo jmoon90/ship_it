@@ -4,4 +4,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   has_many :feedbacks,
     inverse_of: :post
+
+  has_many :votes,
+    dependent: :destroy,
+    inverse_of: :post
 end
