@@ -46,9 +46,11 @@
     <% flash.each do |name, msg| %>
       <%= msg %>
     <% end %>
-    <div class="row">
-      <div class="small-12 columns"><%= yield %></div>
-    </div>
+      <div class="row">
+        <div class="small-6 small-centered columns columns">
+          <%= yield %>
+        </div>
+      </div>
   </div>
 </body>
     <%= javascript_include_tag "application" %>
