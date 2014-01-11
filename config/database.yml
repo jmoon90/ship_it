@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: shipit_development
   pool: 5
-  username: shipit
+  username: 
   password:
 
   # Connect on a TCP socket. Omitted by default since the client uses a
@@ -48,7 +48,7 @@ test:
   encoding: unicode
   database: shipit_test
   pool: 5
-  username: shipit
+  username:
   password:
 
 production:
@@ -56,5 +56,5 @@ production:
   encoding: unicode
   database: shipit_production
   pool: 5
-  username: shipit
+  username:
   password:
