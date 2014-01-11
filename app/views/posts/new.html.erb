@@ -7,7 +7,7 @@
       <%= simple_form_for @post do |f| %>
         <%= f.input :name %>
         <%= f.input :description %>
-        <%= f.input :url %>
+        <%= f.input :url, placeholder: 'http://example.com' %>
         <%= f.button :submit, "Ship it" %>
       <% end %>
     </div>
