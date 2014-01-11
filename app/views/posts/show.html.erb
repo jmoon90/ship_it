@@ -1,12 +1,29 @@
-<h1><%= @post.name %></h1>
+<div class='row'>
+  <div class='small-8 small-offset-1 columns'>
+    <h1><%= link_to @post.name, @post.url %></h1>
+  </div>
+  <div class='small-8 small-offset-1 columns'>
+  <p><%= @post.description %></p>
+  <br>
+</div>
 
-<p><%= @post.description %></p>
 
-<ul>
-<%= @post.feedbacks.each do |fb| %>
-  <li><%=fb.comment %></li>
+<div class='row'>
+  <div class='small-8 small-offset-1 columns' style='margin-top:15px;'>
+    <% if @post.feedbacks == [] %>
+      <p>No feedbacks yet<p>
+    <% else %>
+      <h4><%= pluralize("#{@post.feedbacks.count}", 'Feedback')%></h4>
+  </div>
+</div>
+
+   <% @post.feedbacks.each do |feedback| %>
+      <div class="row">
+        <div class="small-8 small-offset-1 columns"><%= feedback.comment %></div>
+      </div>
+    <% end %>
 <% end %>
-</ul>
+
 
 
 <% if user_signed_in? %>
@@ -27,5 +44,7 @@
 
     <%= f.submit "Submit Feedback" %>
   <% end %>
+<% else %>
+  <h3><%= link_to 'Sign in', new_user_session_path %> to write a comment</h3>
 <% end %>
 

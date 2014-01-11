@@ -1,6 +1,14 @@
-<%= simple_form_for @post do |f| %>
-  <%= f.input :name %>
-  <%= f.input :description %>
-  <%= f.input :url %>
-  <%= f.button :submit, "Ship it" %>
-<% end %>
+<div class='row'>
+  <div class='small-12 small-offset-1 columns'>
+  </div>
+</div>
+  <div class='row' >
+    <div class='small-8 small-offset-1 columns'style="padding-top: 50px;">
+      <%= simple_form_for @post do |f| %>
+        <%= f.input :name %>
+        <%= f.input :description %>
+        <%= f.input :url %>
+        <%= f.button :submit, "Ship it" %>
+      <% end %>
+    </div>
+  </div>
