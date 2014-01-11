@@ -18,7 +18,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.most_votes
-    all.order(votes: :desc)
+    all.order(votes_count: :desc)
   end
 
   class << self
