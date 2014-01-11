@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140111154936) do
+ActiveRecord::Schema.define(version: 20140111163049) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "feedbacks", force: true do |t|
+    t.integer "user_id"
+    t.integer "post_id"
+    t.text    "comment", null: false
+  end
+
+  add_index "feedbacks", ["post_id"], name: "index_feedbacks_on_post_id", using: :btree
+  add_index "feedbacks", ["user_id"], name: "index_feedbacks_on_user_id", using: :btree
 
   create_table "posts", force: true do |t|
     t.integer "user_id"

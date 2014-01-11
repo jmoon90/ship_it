@@ -2,10 +2,10 @@ require 'spec_helper'
 
 feature 'guest visits post index page' do
   before(:each) do
-    FactoryGirl.create(:user) 
+    FactoryGirl.create(:user)
   end
 
-  given(:post) { FactoryGirl.create(:post) }
+  given(:post) { FactoryGirl.create(:post, user_id: 5) }
   scenario 'sees all posts' do
     post
     visit posts_path
