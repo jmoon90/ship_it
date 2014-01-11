@@ -17,6 +17,10 @@ class Post < ActiveRecord::Base
     votes.find_by(user_id: user.id).present?
   end
 
+  def self.most_votes
+    all.order(votes: :desc)
+  end
+
   class << self
     def by_recency
       order(created_at: :desc)

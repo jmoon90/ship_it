@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140111204644) do
+ActiveRecord::Schema.define(version: 20140111234338) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,12 +27,14 @@ ActiveRecord::Schema.define(version: 20140111204644) do
 
   create_table "posts", force: true do |t|
     t.integer "user_id"
-    t.string  "name",        null: false
-    t.string  "url",         null: false
+    t.string  "name",                    null: false
+    t.string  "url",                     null: false
     t.text    "description"
+    t.integer "votes_count", default: 0
   end
 
   add_index "posts", ["user_id"], name: "index_posts_on_user_id", using: :btree
+  add_index "posts", ["votes_count"], name: "index_posts_on_votes_count", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false
