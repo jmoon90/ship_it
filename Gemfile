@@ -31,6 +31,11 @@ gem 'devise', '~>3.2.2'
 
 gem 'simple_form', '~>3.0.1'
 
+gem 'compass-rails'
+
+gem 'foundation-rails'
+
+
 group :test, :development do
   gem 'dotenv'
   gem 'pry-rails'
