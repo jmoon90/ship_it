@@ -11,4 +11,5 @@ Users can vote up and down based on the idea / quality / look. Users are
 also able to write comments about the app
 
 
-link[Screen Run Through](http://www.youtube.com/watch?v=URB3ryJeg-s)
+link [Screen Run Through](http://www.youtube.com/watch?v=URB3ryJeg-s) -
+There is no sound
