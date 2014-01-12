@@ -9,11 +9,12 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = Post.new(id: params[:id])
   end
 
   def create
-    @post = Post.new(post_params)
+    binding.pry
+    @post = current_user.posts.build(post_params)
     if @post.save
       flash[:success] = "Successfully Shipped"
       redirect_to posts_path

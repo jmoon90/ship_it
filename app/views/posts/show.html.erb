@@ -2,10 +2,13 @@
   <div class='small-8 small-offset-1 columns'>
     <h1><%= link_to @post.name, @post.url %><span class='shipit_url'> - click me</span></h1>
   </div>
-  <div class='small-8 small-offset-1 columns'>
+  <div class='small-9 small-offset-1 columns'>
     <p><b>Description</b>: <%= @post.description %></p>
   <% if @post.github_url != nil %>
   <p><b>Github</b>: <%= @post.github_url %></p>
+  <% end %>
+  <% if @post.user == current_user %>
+    <%= link_to 'Edit', edit_post_path(post) %>
   <% end %>
   <br>
 </div>
