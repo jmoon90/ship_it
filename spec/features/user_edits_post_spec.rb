@@ -13,7 +13,6 @@ feature 'user edit post' do
   scenario 'with invalid information' do
     post = FactoryGirl.create(:post)
     visit edit_post_path(post)
-    save_and_open_page
     click_on 'Ship it'
     expect(page).to have_content(post.name)
   end
