@@ -4,6 +4,10 @@
   </div>
   <div class='small-8 small-offset-1 columns'>
   <p><%= @post.description %></p>
+  <p><%= @post.url %></p>
+  <% if @post.github_url != nil %>
+  <p><%= @post.url %></p>
+  <% end %>
   <br>
 </div>
 
