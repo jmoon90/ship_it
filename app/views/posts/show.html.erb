@@ -8,7 +8,7 @@
   <p><b>Github</b>: <%= @post.github_url %></p>
   <% end %>
   <% if @post.user == current_user %>
-    <%= link_to 'Edit', edit_post_path(post) %>
+    <%= link_to 'Edit', edit_post_path(@post) %>
   <% end %>
   <br>
 </div>
