@@ -1,10 +1,14 @@
 require 'spec_helper'
 
 feature 'user posts app' do
+  before(:each) do
+    user = FactoryGirl.create(:user)
+    log_in_user(user)
+  end
   scenario 'with valid input' do
     visit new_post_path
-    fill_in "Description", with: "App to Ship it today"
     fill_in "Name", with: "Ship It"
+    fill_in "Description", with: "App to Ship it today"
     fill_in "Url", with: "www.shipit.com"
     click_on "Ship it"
 
