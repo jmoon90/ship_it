@@ -3,9 +3,9 @@
     <h1><%= link_to @post.name, @post.url %><span class='shipit_url'> - click me</span></h1>
   </div>
   <div class='small-8 small-offset-1 columns'>
-  <p>Description:<%= @post.description %></p>
+    <p><b>Description</b>: <%= @post.description %></p>
   <% if @post.github_url != nil %>
-  <p>Github: <%= @post.github_url %></p>
+  <p><b>Github</b>: <%= @post.github_url %></p>
   <% end %>
   <br>
 </div>
