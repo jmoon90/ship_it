@@ -3,7 +3,7 @@ class Vote < ActiveRecord::Base
     inverse_of: :votes
 
   belongs_to :post,
-#      counter_cache: true,
+      counter_cache: true,
       inverse_of: :votes
 
     validates_presence_of :user
