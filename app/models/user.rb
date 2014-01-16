@@ -5,7 +5,6 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :votes,
     inverse_of: :user
-
   has_many :posts,
     dependent: :nullify,
     inverse_of: :user
