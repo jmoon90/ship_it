@@ -13,7 +13,7 @@
                 <p><%= pluralize post.votes.count, "High Five" %></p>
                   <% if user_signed_in? %>
                     <% if post.has_vote_from?(current_user) %>
-                      <%= button_to "Remove High FIve", post_vote_path(post, post.vote_from(current_user)),
+                      <%= button_to "Remove High Five", post_vote_path(post, post.vote_from(current_user)),
                         method: :delete%>
                     <% else %>
                       <%= button_to "High Five", post_votes_path(post), method: :post %>
