@@ -37,6 +37,9 @@ gem 'compass-rails'
 
 gem 'foundation-rails'
 
+gem 'carrierwave'
+
+gem 'rmagick'
 
 group :test, :development do
   gem 'dotenv'

@@ -14,7 +14,7 @@ feature 'User visit post' do
       click_on 'Submit Feedback'
 
       expect(page).to have_content(feedback.comment)
-      expect(page).to have_content('Successfully submitted feedback')
+      expect(page).to have_content("Thank you. You're submission feeds my ego")
     end
 
     scenario 'comments with invalid information' do

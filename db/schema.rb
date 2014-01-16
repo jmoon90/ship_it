@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140113184517) do
+ActiveRecord::Schema.define(version: 20140116151945) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20140113184517) do
     t.integer "user_id"
     t.integer "post_id"
     t.text    "comment", null: false
+    t.string  "image"
   end
 
   add_index "feedbacks", ["post_id"], name: "index_feedbacks_on_post_id", using: :btree

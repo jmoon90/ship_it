@@ -4,7 +4,7 @@ class FeedbacksController < ApplicationController
     @feedback = @post.feedbacks.build(feedback_params)
 
     if @feedback.save
-      flash[:notice] = "Successfully submitted feedback"
+      flash[:notice] = "Thank you. You're submission feeds my ego"
       redirect_to post_path(@post)
     else
       flash[:notice] = "Invalid information. Please try again"
@@ -15,6 +15,6 @@ class FeedbacksController < ApplicationController
   private
 
   def feedback_params
-    params.require(:feedback).permit(:comment)
+    params.require(:feedback).permit(:comment, :image)
   end
 end
