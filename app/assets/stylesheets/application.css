@@ -22,3 +22,18 @@
 .shipit_url {
   font-size: 18px;
 }
+
+html, body {
+  height: 100%;
+}
+
+.wrapper {
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -155px;
+}
+
+.footer, .push {
+  height: 90px;
+}
